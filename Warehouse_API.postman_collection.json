@@ -1,0 +1,365 @@
+{
+  "info": {
+    "_postman_id": "a9e6b541-7c91-4d32-9b2e-0a5f8b9e1234",
+    "name": "Warehouse Management System API",
+    "description": "Complete Postman collection to test all endpoints for Product and Order management, including BST priority tree operations and sorting algorithms.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Products API",
+      "description": "Endpoints related to Product management and QuickSort operations",
+      "item": [
+        {
+          "name": "Create Product - Keyboard",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Mechanical Keyboard\",\n  \"price\": 89.99,\n  \"stock\": 45\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            },
+            "description": "Create a new product record"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product - Mouse",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ergonomic Gaming Mouse\",\n  \"price\": 49.50,\n  \"stock\": 120\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            },
+            "description": "Create another product record for sorting test"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product - Monitor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"UltraHD 4K Monitor\",\n  \"price\": 349.99,\n  \"stock\": 15\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            },
+            "description": "Create a high-price low-stock product"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products"
+              ]
+            },
+            "description": "Fetch all products in the database"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Products Sorted by Price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/sorted?by=price",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "sorted"
+              ],
+              "query": [
+                {
+                  "key": "by",
+                  "value": "price"
+                }
+              ]
+            },
+            "description": "Get all products sorted in ascending order by price using QuickSort algorithm"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Products Sorted by Stock",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/sorted?by=stock",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "sorted"
+              ],
+              "query": [
+                {
+                  "key": "by",
+                  "value": "stock"
+                }
+              ]
+            },
+            "description": "Get all products sorted in ascending order by stock using QuickSort algorithm"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders API",
+      "description": "Endpoints related to Order management and Priority BST operations",
+      "item": [
+        {
+          "name": "Create Order - Medium Priority (5)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderDate\": \"2026-08-10\",\n  \"priorityLevel\": 5,\n  \"customer\": {\n    \"name\": \"Jane Doe\",\n    \"email\": \"jane.doe@example.com\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            },
+            "description": "Create a new order with priority 5 and auto-insert into BST"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Order - High Priority (9)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderDate\": \"2026-08-10\",\n  \"priorityLevel\": 9,\n  \"customer\": {\n    \"name\": \"John Smith\",\n    \"email\": \"john.smith@example.com\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            },
+            "description": "Create a new order with priority 9"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Order - Low Priority (2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderDate\": \"2026-08-10\",\n  \"priorityLevel\": 2,\n  \"customer\": {\n    \"name\": \"Alice Johnson\",\n    \"email\": \"alice.j@example.com\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            },
+            "description": "Create a new order with priority 2"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            },
+            "description": "Fetch all orders from the database"
+          },
+          "response": []
+        },
+        {
+          "name": "Add Order to Priority Tree Manually",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"orderDate\": \"2026-08-10\",\n  \"priorityLevel\": 7,\n  \"customer\": {\n    \"name\": \"Bob Lee\",\n    \"email\": \"bob.lee@example.com\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders/add-to-priority-tree",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders",
+                "add-to-priority-tree"
+              ]
+            },
+            "description": "Explicitly insert an order into the Order BST priority structure"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Inorder Priority Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders/priority/inorder",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders",
+                "priority",
+                "inorder"
+              ]
+            },
+            "description": "Retrieve orders in ascending priority order using Binary Search Tree inorder traversal"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Highest Priority Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders/priority/highest",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders",
+                "priority",
+                "highest"
+              ]
+            },
+            "description": "Find the order with the highest priority (rightmost node in BST)"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Lowest Priority Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders/priority/lowest",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "orders",
+                "priority",
+                "lowest"
+              ]
+            },
+            "description": "Find the order with the lowest priority (leftmost node in BST)"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
