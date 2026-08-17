@@ -63,3 +63,17 @@ A BST makes it really easy to grab the highest or lowest priority order without 
 
 Right now the BST isn’t balanced, which means it can turn into that “stick” shape if priorities come in sequentially. When that happens, everything slows down. A self-balancing tree would fix that.
 “The current BST is an unbalanced Binary Search Tree… the tree degrades into a linear chain.”
+---
+
+Section 4: AI Usage & Development Assistance
+
+• Where AI was used:
+  - Troubleshooting and debugging the custom recursive Binary Search Tree (BST) insertion, traversal, and min/max lookup logic.
+  - Reviewing the manual Insertion Sort algorithm implementation to ensure in-place shifting and stable sorting behavior without JDK utility dependencies.
+  - Formulating comprehensive JUnit 5 unit test suites for `OrderBSTTest` and `ProductSorterTest`.
+  - Assisting with generating the Postman API collection structure (`Warehouse_API.postman_collection.json`) and drafting comprehensive project documentation/README.
+
+• When AI was used:
+  - During the algorithm refinement phase (verifying edge cases such as duplicate priority handling in BST and empty/single-element lists in Insertion Sort).
+  - During the test verification phase (confirming test coverage across tree traversals and sorting criteria).
+  - During the final documentation and project packaging phase to verify complete rubric alignment against `SD_DSA_FINAL_SUMMER_2026.docx`.

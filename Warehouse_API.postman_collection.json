@@ -15,7 +15,7 @@
   "item": [
     {
       "name": "Products API",
-      "description": "Endpoints related to Product management and QuickSort operations",
+      "description": "Endpoints related to Product management and Insertion Sort operations",
       "item": [
         {
           "name": "Create Product - Keyboard",
@@ -137,7 +137,7 @@
                 }
               ]
             },
-            "description": "Get all products sorted in ascending order by price using QuickSort algorithm"
+            "description": "Get all products sorted in ascending order by price using Insertion Sort algorithm"
           },
           "response": []
         },
@@ -162,7 +162,7 @@
                 }
               ]
             },
-            "description": "Get all products sorted in ascending order by stock using QuickSort algorithm"
+            "description": "Get all products sorted in ascending order by stock using Insertion Sort algorithm"
           },
           "response": []
         }
