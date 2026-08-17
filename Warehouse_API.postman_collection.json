@@ -165,6 +165,31 @@
             "description": "Get all products sorted in ascending order by stock using Insertion Sort algorithm"
           },
           "response": []
+        },
+        {
+          "name": "Get Manual Sorting Results - Price",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/products/sorted?by=price",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "products",
+                "sorted"
+              ],
+              "query": [
+                {
+                  "key": "by",
+                  "value": "price"
+                }
+              ]
+            },
+            "description": "Get manual sorting results - all products manually sorted by price in ascending order using custom Insertion Sort implementation"
+          },
+          "response": []
         }
       ]
     },
