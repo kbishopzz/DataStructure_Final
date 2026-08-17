@@ -168,17 +168,3 @@ mvn spring-boot:run
 ```
 The application will start on `http://localhost:8080`.
 
----
-
-## 🎥 Demo Video Guide
-
-When recording your demo video submission, ensure you demonstrate the following 3 key items:
-
-1. **API Functionality in Postman**:
-   * Create products and orders using the imported Postman collection.
-   * Fetch all products and orders to confirm persistence.
-2. **BST Traversal Results**:
-   * Execute `GET /orders/priority/inorder` to show orders sorted in ascending order of priority.
-   * Execute `GET /orders/priority/highest` and `GET /orders/priority/lowest` to show min/max retrieval.
-3. **Manual Sorting Results**:
-   * Execute `GET /products/sorted?by=price` and `GET /products/sorted?by=stock` to display the output of your custom Insertion Sort.
